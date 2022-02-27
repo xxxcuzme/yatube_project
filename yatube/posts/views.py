@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Post, Group
-#from django.http import HttpResponse
+
 
 # Create your views here.
 def index(request):
@@ -11,6 +11,7 @@ def index(request):
         'posts': posts
     }
     return render(request, template, context)
+
 
 def group_list(request, slug):
     group = get_object_or_404(Group, slug=slug)
